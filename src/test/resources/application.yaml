@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: test.dkruppa
+  profiles:
+    active: test
+  datasource:
+    hikari:
+      connection-timeout: 5000
+  liquibase:
+    enabled: false
+server:
+  servlet:
+    context-path: /api/v1
