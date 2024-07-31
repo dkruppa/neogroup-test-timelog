@@ -1,0 +1,26 @@
+version: "3.1"
+
+services:
+  mysql_db:
+    image: mysql:8
+    restart: always
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: secret
+      MYSQL_DATABASE: test
+      MYSQL_USER: user
+      MYSQL_PASSWORD: secret2
+    healthcheck:
+      test: mysqladmin ping -h 127.0.0.1 -u $$MYSQL_USER --password=$$MYSQL_PASSWORD
+      interval: 5s
+      timeout: 5s
+      retries: 10
+  time_log:
+    image: timelog:0.0.1
+    container_name: time_log
+    depends_on:
+       mysql_db:
+          condition: service_healthy
+    ports:
+      - "8080:8080"
