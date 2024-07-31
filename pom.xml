@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>group.neo.test.dkruppa</groupId>
 	<artifactId>timelog</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.0.1</version>
 	<name>timelog</name>
 	<description>Test task for Neo Group</description>
 
