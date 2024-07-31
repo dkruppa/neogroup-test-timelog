@@ -17,7 +17,7 @@ services:
       timeout: 5s
       retries: 10
   time_log:
-    image: timelog:0.0.1
+    image: timelog:0.0.2
     container_name: time_log
     depends_on:
        mysql_db:
